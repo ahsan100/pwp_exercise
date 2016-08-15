@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="forum.css">
+    <title>Forum</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="forum_client.js"></script>
+</head>
+
+<body> 
+    <div id="intro">
+        <h1>Forum administration panel</h1>
+        <span id="instructions">Click on a nickname in the sidebar to edit/delete a user info. Press <span class="oblique">"Add User"</span> to add a new user.</span>
+    </div>
+    <div id= "content">
+        <div id="sidebar"> 
+            <!-- Side bar area -->      
+             <ul id="user_list">  
+
+            </ul>
+            <div id="addUserButtonContainer">
+                <a href="#" id="addUserButton">Add User</a>
+            </div>
+        </div>
+        <div id = "mainContent" >
+            <!-- Main content area -->
+            <div id="userData">  
+                <div class="section" id="userHeader">  
+                        <input class="noEditable" name="nickname" id="nickname" placeholder="nickname" type="text"  readonly="readonly"/> 
+                        <p>Registered at <input class="noEditable" type="text" name="registrationdate" id="registrationdate" readonly="readonly"/>- 
+                        <input type="text" class="noeditable" id="messagesNumber" name="messagesNumber" readonly="readonly" size="2" value="??"/> <a href="#messages">messages</a></p>  
+                </div>
+                <div class="section" id="userProfile">
+                    <!-- User info area -->
+                    <h3>User profile</h3>  
+                    <form action="#" id="user_form">    
+                        <div class="commands">
+                            <input id="deleteUser" type="button" class="deleteButton" value="Delete"/>
+                            <input id="editUser" type="button" class="editButton" value="Edit"/>
+                        </div>
+                        <div class="form_content">
+                            
+                        </div>
+                        
+                    </form> 
+                    <form action="#" id="user_restricted_form">
+                        
+                        <div class="form_content">
+                            
+                        </div>
+                        <div class="commands">
+                            <input id="deleteUserRestricted" class="deleteButton" type="button" value="Delete"/>
+                            <input id="editUserRestricted" type="button" class="editButton" value="Edit"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="section" id="messages">  
+                    <!-- Message list area -->
+                    <h3>Message List</h3>  
+                    <div id="messages_list">
+                        <div class="message">  
+                            <form action="#">
+                                <div class="commands">
+                                    <input  type="button" class="deleteButton deleteMessage" value="Delete"/>
+                                </div>  
+                            </form>
+                        </div>  
+                    </div>  
+                </div>  
+            </div>
+            <div id ="newUser">
+                <form action="#" id="new_user_form"> 
+                    <div class="form_content">
+                                
+                    </div>
+                    <div class="commands">
+                        <input id="createUser" type="button" class="createButton" value="Create"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>    
+</body>
+
+</html> 

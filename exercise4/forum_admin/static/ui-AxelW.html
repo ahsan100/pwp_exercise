@@ -1,0 +1,67 @@
+<html><head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="forum.css">
+    <title>Forum</title>
+</head>
+
+<body> 
+    <div id="intro">
+        <h1>Forum administration panel</h1>
+        <span id="instructions">Click on a nickname in the sidebar to edit/delete a user info. Press <span class="oblique">"Add User"</span> to add a new user.</span>
+    </div>
+    <div id="content">
+        <div id="sidebar"> 
+            <!-- Side bar area -->      
+             <ul id="user_list"><li class="selected"><a class="user_link" href="/forum/api/users/AxelW/">AxelW</a></li><li><a class="user_link" href="/forum/api/users/Koodari/">Koodari</a></li><li><a class="user_link" href="/forum/api/users/HockeyFan/">HockeyFan</a></li></ul>
+            <div id="addUserButtonContainer">
+                <a href="#" id="addUserButton">Add User</a>
+            </div>
+        </div>
+        <div id="mainContent" style="display: table-cell;">
+            <!-- Main content area -->
+            <div id="userData">  
+                <div class="section" id="userHeader">  
+                        <input class="noEditable" name="nickname" id="nickname" placeholder="nickname" type="text" readonly="readonly"> 
+                        <p>Registered at <input class="noEditable" type="text" name="registrationdate" id="registrationdate" readonly="readonly">- 
+                        <input type="text" class="noeditable" id="messagesNumber" name="messagesNumber" readonly="readonly" size="2" value="??"> <a href="#messages">messages</a></p>  
+                </div>
+                <div class="section" id="userProfile">
+                    <!-- User info area -->
+                    <h3>User profile</h3>  
+                    <form action="/forum/api/users/AxelW/" id="user_form">    
+                        <div class="commands">
+                            <input id="deleteUser" type="button" class="deleteButton" value="Delete" style="display: inline-block;">
+                            <input id="editUser" type="button" class="editButton" value="Edit" style="display: none;">
+                        </div>
+                        <div class="form_content"></div>
+                        
+                    </form> 
+                    <form action="/forum/api/users/AxelW/restricted_profile/" id="user_restricted_form">
+                        
+                        <div class="form_content"><label for="website_id">website</label><input type="text" name="website" id="website_id" class="editable" placeholder="Insert user website"><label for="skype_id">skype</label><input type="text" name="skype" id="skype_id" class="editable" placeholder="Insert user skype"><label for="gender_id">gender*</label><input type="text" name="gender" value="Male" id="gender_id" class="editable" placeholder="Insert user gender" required=""><label for="image_id">image</label><input type="text" name="image" value="photo3.png" id="image_id" class="editable" placeholder="Insert user image"><label for="familyName_id">familyName*</label><input type="text" name="familyName" value="Axel" id="familyName_id" class="editable" placeholder="Insert user familyName" required=""><label for="telephone_id">telephone</label><input type="text" name="telephone" id="telephone_id" class="editable" placeholder="Insert user telephone"><label for="birthday_id">birthday*</label><input type="text" name="birthday" value="200-11-11" id="birthday_id" class="editable" placeholder="Insert user birthday" required=""><label for="address_id">address</label><input type="text" name="address" id="address_id" class="editable" placeholder="Insert user address"><label for="givenName_id">givenName*</label><input type="text" name="givenName" value="Watts" id="givenName_id" class="editable" placeholder="Insert user givenName" required=""><label for="email_id">email*</label><input type="text" name="email" value="aw@hotmail.com" id="email_id" class="editable" placeholder="Insert user email" required=""></div>
+                        <div class="commands">
+                            <input id="deleteUserRestricted" class="deleteButton" type="button" value="Delete" style="display: none;">
+                            <input id="editUserRestricted" type="button" class="editButton" value="Edit" style="display: inline-block;">
+                        </div>
+                    </form>
+                </div>
+                <div class="section" id="messages">  
+                    <!-- Message list area -->
+                    <h3>Message List</h3>  
+                    <div id="messages_list"><div class="message"><form action="/forum/api/messages/msg-17/">   <div class="form_content">       <input type="text" class="headline" value="Try hello" readonly="readonly">       <div class="articlebody">Use the magic word 'Hello'</div>   </div>   <div class="commands">        <input type="button" class="deleteButton deleteMessage" value="Delete">   </div></form></div><div class="message"><form action="/forum/api/messages/msg-1/">   <div class="form_content">       <input type="text" class="headline" value="CSS: Margin problems with IE" readonly="readonly">       <div class="articlebody">I am using a float layout on my website but I've run into some problems with Internet Explorer. I have set the left margin of a float to 100 pixels, but IE uses a margin of 200px instead. Why is that? Is this one of the many bugs in IE?</div>   </div>   <div class="commands">        <input type="button" class="deleteButton deleteMessage" value="Delete">   </div></form></div></div>  
+                </div>  
+            </div>
+            <div id="newUser" style="display: none;">
+                <form action="/forum/api/users/" id="new_user_form"> 
+                    <div class="form_content"></div>
+                    <div class="commands">
+                        <input id="createUser" type="button" class="createButton" value="Create" style="display: none;">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>    
+
+
+ </body></html>
